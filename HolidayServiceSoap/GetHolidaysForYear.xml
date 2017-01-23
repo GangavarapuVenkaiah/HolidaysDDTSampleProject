@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="http://www.27seconds.com/Holidays/GetHolidaysForYear" name="GetHolidaysForYear" bindingOperationName="GetHolidaysForYear" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="ef08dcfe-9c83-4510-ac39-685289f6f527" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="ef08dcfe-9c83-4510-ac39-685289f6f527fileName">GetHolidaysForYear</con:setting></con:settings><con:call name="Request 1" id="f1ecff50-a953-4bbf-b5fa-0875a31f2924"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetHolidaysForYear>
+         <!--Optional:-->
+         <hol:countryCode>?</hol:countryCode>
+         <hol:year>?</hol:year>
+      </hol:GetHolidaysForYear>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.27seconds.com/Holidays/GetHolidaysForYear"/><con:wsrmConfig version="1.2"/></con:call></con:operation>

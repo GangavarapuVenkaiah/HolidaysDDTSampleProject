@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetHolidayDate TestCase" searchProperties="true" id="7a9a20a5-4784-40c6-a92c-d5d8085e474e" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="FlowLayout">true</con:setting><con:setting id="7a9a20a5-4784-40c6-a92c-d5d8085e474efileName">GetHolidayDate-TestCase</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" name="GetHolidayDate" id="31811185-f397-4fc5-ba58-cc0f18008acb"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HolidayServiceSoap</con:interface><con:operation>GetHolidayDate</con:operation><con:request name="GetHolidayDate" id="eb2435a4-3679-495f-acf0-c2080472e3ef"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetHolidayDate>
+         <hol:countryCode>${#TestCase#holCountry}</hol:countryCode>
+         <hol:holidayName>${#TestCase#holCode}</hol:holidayName>
+         <hol:year>${#TestCase#holYear}</hol:year>
+      </hol:GetHolidayDate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XPath Match" name="XPath Match - Expected Date" id="5b2bb393-97f4-4302-8e39-a5688a7bf405"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://www.27seconds.com/Holidays/';
+
+//ns1:GetHolidayDateResult</path><content>${#TestCase#holDate}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple Contains" id="b9fceb82-c93c-4b20-b74a-3e56fa96ccb9" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.27seconds.com/Holidays/GetHolidayDate" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="ReadNextLine" id="28ab8379-08e3-40c2-9157-be7907ecac3e"><con:settings/><con:config><script>/*Read in the next line of the file
+  We can use the same object created in the Setup script because it
+  was assigned to the context variable.*/
+  
+def nextLine = context.sourceFile.readLine()
+/*If the end of the file hasn't been reached (nextLine does NOT equal null)
+  split the line and assign new property values, rename test request steps,
+  and go back to the first test request step*/
+if(nextLine != null){
+	def propData = nextLine.split(",")
+	def curTestCase = testRunner.testCase
+	curTestCase.setPropertyValue("holCountry",propData[0])
+	curTestCase.setPropertyValue("holCode",propData[1])
+	curTestCase.setPropertyValue("holYear",propData[2])
+	curTestCase.setPropertyValue("holDate",propData[3])
+	//Rename request test step for readability
+	curTestCase.getTestStepAt(0).setName("GetHolidayDate-" + propData[1] + "-" + propData[2])
+	testRunner.gotoStep(0)
+}
+</script></con:config></con:testStep><con:setupScript>//Create a new BufferedReader object, using the context variable so it can be used between test components
+context.sourceFile = new BufferedReader(new FileReader("D:\\SVN\\API\\SWISS\\holidays.csv"))
+//Read in the first line of the data file
+def firstLine = context.sourceFile.readLine()
+//Split the first line into a string array and assign the array members to various test case properties
+def propData = firstLine.split(",")
+testCase.setPropertyValue("holCountry",propData[0])
+testCase.setPropertyValue("holCode",propData[1])
+testCase.setPropertyValue("holYear",propData[2])
+testCase.setPropertyValue("holDate",propData[3])
+//Rename request test step for readability in the log; append code and year
+testCase.getTestStepAt(0).setName("GetHolidayDate-" + propData[1] + "-" + propData[2])</con:setupScript><con:tearDownScript>//Cleanup: rename test step to its original name and close the file reader
+testCase.getTestStepAt(0).setName("GetHolidayDate")
+context.sourceFile.close()</con:tearDownScript><con:properties><con:property><con:name>holCode</con:name><con:value>FLAG</con:value></con:property><con:property><con:name>holDate</con:name><con:value>2004-06-14T00:00:00</con:value></con:property><con:property><con:name>holYear</con:name><con:value>2004</con:value></con:property><con:property><con:name>holCountry</con:name><con:value>US</con:value></con:property></con:properties><con:reportParameters/><con:breakPoints><con:testStepId>31811185-f397-4fc5-ba58-cc0f18008acb</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>28ab8379-08e3-40c2-9157-be7907ecac3e</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

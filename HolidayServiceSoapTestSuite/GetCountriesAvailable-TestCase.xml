@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetCountriesAvailable TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" id="7246f331-d532-477a-8384-3c218d7bd207" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="7246f331-d532-477a-8384-3c218d7bd207fileName">GetCountriesAvailable-TestCase</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" name="GetCountriesAvailable" id="aaa6e0b2-9094-414a-b312-4ea24408d5f6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HolidayServiceSoap</con:interface><con:operation>GetCountriesAvailable</con:operation><con:request name="GetCountriesAvailable" id="63ab18d0-7197-415f-bb3d-8f703a71f67d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetCountriesAvailable/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XQuery Match" name="XQuery Match - Expected Data" id="45657f0c-3d57-4294-b606-d3f3bb7fcf0a"><con:configuration><path><![CDATA[declare namespace ns1='';
+declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+declare namespace ns2='http://www.27seconds.com/Holidays/';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace xs='http://www.w3.org/2001/XMLSchema';
+
+<ResultSet>
+{
+for $x in //Countries
+order by $x/Code/text()
+return 
+<CountryData>
+<CountryCode>{$x/Code/text()}</CountryCode>
+<CountryName>{$x/Name/text()}</CountryName>
+</CountryData>
+}
+</ResultSet>]]></path><content><![CDATA[<ResultSet>
+  <CountryData>
+    <CountryCode>GBEAW</CountryCode>
+    <CountryName>UK - England and Wales</CountryName>
+  </CountryData>
+  <CountryData>
+    <CountryCode>GBNIR</CountryCode>
+    <CountryName>UK - Northern Ireland</CountryName>
+  </CountryData>
+  <CountryData>
+    <CountryCode>GBSCT</CountryCode>
+    <CountryName>UK - Scotland</CountryName>
+  </CountryData>
+  <CountryData>
+    <CountryCode>US</CountryCode>
+    <CountryName>United States</CountryName>
+  </CountryData>
+</ResultSet>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.27seconds.com/Holidays/GetCountriesAvailable" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>aaa6e0b2-9094-414a-b312-4ea24408d5f6</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>

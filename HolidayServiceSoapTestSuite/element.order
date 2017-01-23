@@ -1,0 +1,5 @@
+GetCountriesAvailable-TestCase.xml
+GetHolidaysAvailable-TestCase.xml
+GetHolidayDate-TestCase.xml
+GetHolidaysForDateRange-TestCase.xml
+GetHolidaysForMonth-TestCase.xml

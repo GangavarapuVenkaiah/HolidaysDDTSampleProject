@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="http://www.27seconds.com/Holidays/GetHolidayDate" name="GetHolidayDate" bindingOperationName="GetHolidayDate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="9077211b-e3ee-4bbd-bd50-a978cf8f8d8a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="9077211b-e3ee-4bbd-bd50-a978cf8f8d8afileName">GetHolidayDate</con:setting></con:settings><con:call name="Request 1" id="7e4b16f9-67ff-4ffe-ba8a-eb1cc6260239"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetHolidayDate>
+         <!--Optional:-->
+         <hol:countryCode>?</hol:countryCode>
+         <!--Optional:-->
+         <hol:holidayName>?</hol:holidayName>
+         <hol:year>?</hol:year>
+      </hol:GetHolidayDate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.27seconds.com/Holidays/GetHolidayDate"/></con:call></con:operation>

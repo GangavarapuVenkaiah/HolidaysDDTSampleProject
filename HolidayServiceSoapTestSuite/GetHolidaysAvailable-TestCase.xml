@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetHolidaysAvailable TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" id="65e104b1-1b47-4239-8648-dfec0b060f24" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="65e104b1-1b47-4239-8648-dfec0b060f24fileName">GetHolidaysAvailable-TestCase</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="request" name="GetHolidaysAvailable" id="0a47693f-7a57-4784-b749-a5e75fd87ba6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HolidayServiceSoap</con:interface><con:operation>GetHolidaysAvailable</con:operation><con:request name="GetHolidaysAvailable" id="403c5602-774b-4a15-a4bc-c3a125b854e0"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetHolidaysAvailable>
+         <hol:countryCode>GBEAW</hol:countryCode>
+      </hol:GetHolidaysAvailable>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="XQuery Match" name="XQuery Match - Expected Data" id="657077c1-7419-4f1b-9285-58b6aca48e69"><con:configuration><path><![CDATA[declare namespace ns1='';
+declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1';
+declare namespace ns2='http://www.27seconds.com/Holidays/';
+declare namespace msdata='urn:schemas-microsoft-com:xml-msdata';
+declare namespace xs='http://www.w3.org/2001/XMLSchema';
+
+<HolidayResults>
+{
+for $x in //Holidays
+return
+<HolidayData>
+<HolidayName>{$x/Name/text()}</HolidayName>
+<HolidayKey>{$x/Key/text()}</HolidayKey>
+</HolidayData>
+}
+</HolidayResults>]]></path><content><![CDATA[<HolidayResults>
+  <HolidayData>
+    <HolidayName>New Year's Day</HolidayName>
+    <HolidayKey>NEW_YEARS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Robert Burns Night (Burns Night)</HolidayName>
+    <HolidayKey>BURNS_NIGHT</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Holocaust Memorial Day</HolidayName>
+    <HolidayKey>HOLOCAUST</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Easter Sunday</HolidayName>
+    <HolidayKey>EASTER</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Easter Monday</HolidayName>
+    <HolidayKey>EASTER_MONDAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Good Friday</HolidayName>
+    <HolidayKey>GOOD_FRIDAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>May Day (Early May Bank Holiday)</HolidayName>
+    <HolidayKey>MAY_DAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Spring Bank Holiday</HolidayName>
+    <HolidayKey>SPRING_BANK_HOL</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Summer Bank Holiday</HolidayName>
+    <HolidayKey>SUMMER_BANK_HOL</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Christmas</HolidayName>
+    <HolidayKey>CHRISTMAS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Boxing Day</HolidayName>
+    <HolidayKey>BOXING_DAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>New Year's Eve</HolidayName>
+    <HolidayKey>NEW_YEARS_EVE</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Valentine's Day</HolidayName>
+    <HolidayKey>VALENTINES</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>St. David's Day</HolidayName>
+    <HolidayKey>SAINT_DAVIDS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>St. Patrick's Day</HolidayName>
+    <HolidayKey>ST_PATRICKS_DAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Shrove Tuesday (Pancake Day)</HolidayName>
+    <HolidayKey>SHROVE_TUES</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Ash Wednesday</HolidayName>
+    <HolidayKey>ASH_WEDS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Palm Sunday</HolidayName>
+    <HolidayKey>PALM_SUN</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Maundy Thursday</HolidayName>
+    <HolidayKey>MAUNDY_THURS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Mothering Sunday (Mother's Day)</HolidayName>
+    <HolidayKey>MOTHERS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>British Summertime (BST) Begins</HolidayName>
+    <HolidayKey>BST_BEGINS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>April Fools Day</HolidayName>
+    <HolidayKey>APRIL_FOOLS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Queen Elizabeth's Birthday</HolidayName>
+    <HolidayKey>QUEEN_ELIZ_BDAY</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>St. George's Day</HolidayName>
+    <HolidayKey>SAINT_GEORGES</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Trooping the Colour</HolidayName>
+    <HolidayKey>TROOPING_THE_COLOUR</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Father's Day</HolidayName>
+    <HolidayKey>FATHERS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Emmeline Pankhurst Day</HolidayName>
+    <HolidayKey>EMMELINE_PANKHURST</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>St. Swithun's Day (aka St. Swithin's)</HolidayName>
+    <HolidayKey>SAINT_SWITHUNS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Halloween</HolidayName>
+    <HolidayKey>HALLOWEEN</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>All Saints Day</HolidayName>
+    <HolidayKey>ALL_SAINTS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Guy Fawkes Night</HolidayName>
+    <HolidayKey>GUY_FAWKES</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Remembrance Day (Remembrance Sunday)</HolidayName>
+    <HolidayKey>REMEMBERANCE</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>St. Andrew's Day</HolidayName>
+    <HolidayKey>SAINT_ANDREWS</HolidayKey>
+  </HolidayData>
+  <HolidayData>
+    <HolidayName>Hogmanay</HolidayName>
+    <HolidayKey>HOGMANAY</HolidayKey>
+  </HolidayData>
+</HolidayResults>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.27seconds.com/Holidays/GetHolidaysAvailable" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
