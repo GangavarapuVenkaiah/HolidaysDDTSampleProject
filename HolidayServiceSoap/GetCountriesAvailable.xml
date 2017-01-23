@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation isOneWay="false" action="http://www.27seconds.com/Holidays/GetCountriesAvailable" name="GetCountriesAvailable" bindingOperationName="GetCountriesAvailable" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="eb8ced51-b6bf-4408-9f9a-f36881ac3b50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="eb8ced51-b6bf-4408-9f9a-f36881ac3b50fileName">GetCountriesAvailable</con:setting></con:settings><con:call name="Request 1" id="616f8c69-06c3-4fbb-8899-142ee6736882"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.holidaywebservice.com/Holidays/HolidayService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hol="http://www.27seconds.com/Holidays/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <hol:GetCountriesAvailable/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.27seconds.com/Holidays/GetCountriesAvailable"/></con:call></con:operation>
