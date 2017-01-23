@@ -31,7 +31,7 @@ if(nextLine != null){
 	testRunner.gotoStep(0)
 }
 </script></con:config></con:testStep><con:setupScript>//Create a new BufferedReader object, using the context variable so it can be used between test components
-context.sourceFile = new BufferedReader(new FileReader("D:\\SVN\\API\\SWISS\\holidays.csv"))
+context.sourceFile = new BufferedReader(new FileReader("D:\\Old\\SVN\\API\\SWISS\\holidays.csv"))
 //Read in the first line of the data file
 def firstLine = context.sourceFile.readLine()
 //Split the first line into a string array and assign the array members to various test case properties
