@@ -3,8 +3,8 @@
    <soapenv:Header/>
    <soapenv:Body>
       <hol:GetHolidaysAvailable>
-         <hol:countryCode>GBEAW</hol:countryCode>
-      </hol:GetHolidaysAvailable>
+         
+      <hol:countryCode>${#[HolidayServiceSoapTestSuite#GetCountriesAvailable TestCase#GetCountriesAvailable]#Response#declare namespace diffgr='urn:schemas-microsoft-com:xml-diffgram-v1'; declare namespace ns1='http://www.27seconds.com/Holidays/'; //ns1:GetCountriesAvailableResponse[1]/ns1:GetCountriesAvailableResult[1]/diffgr:diffgram[1]/NewDataSet[1]/Countries[1]/Code[1]}</hol:countryCode></hol:GetHolidaysAvailable>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:assertion type="XQuery Match" name="XQuery Match - Expected Data" id="657077c1-7419-4f1b-9285-58b6aca48e69"><con:configuration><path><![CDATA[declare namespace ns1='';
 declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
