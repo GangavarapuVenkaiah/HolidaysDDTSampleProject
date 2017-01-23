@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="f1729ec8-1e3d-4096-a7c9-156d36eaeca4" isOneWay="false" action="http://www.27seconds.com/Holidays/GetHolidaysForYear" name="GetHolidaysForYear" bindingOperationName="GetHolidaysForYear" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="f1729ec8-1e3d-4096-a7c9-156d36eaeca4fileName">GetHolidaysForYear</con:setting></con:settings></con:operation>
