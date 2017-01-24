@@ -9,4 +9,81 @@
          <hol:month>${#TestSuite#Month}</hol:month>
       </hol:GetHolidaysForMonth>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="8e2d1458-d314-44f5-8776-0b188403874c" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://www.27seconds.com/Holidays/GetHolidaysForMonth" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest id="ed2db4d0-21dd-475c-bc11-eb0a833db34c" name="LoadTest GetHolidaysForMonth"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting><con:setting id="hasBeenConvertedToLoadUITest">true</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval><con:reportParameters/></con:loadTest><con:properties/><con:reportParameters/></con:testCase>
+</soapenv:Envelope>]]></con:request><con:assertion type="Simple Contains" id="8e2d1458-d314-44f5-8776-0b188403874c" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="b1657bfd-f9ab-47a9-9dcd-ad17cf428090" name="Response Validation"><con:configuration><token><![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <soap:Body>
+      <GetHolidaysForMonthResponse xmlns="http://www.27seconds.com/Holidays/">
+         <GetHolidaysForMonthResult>
+            <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+               <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+                  <xs:complexType>
+                     <xs:choice minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="Holidays">
+                           <xs:complexType>
+                              <xs:sequence>
+                                 <xs:element name="Name" type="xs:string" minOccurs="0"/>
+                                 <xs:element name="Key" type="xs:string" minOccurs="0"/>
+                                 <xs:element name="Date" type="xs:dateTime" minOccurs="0"/>
+                                 <xs:element name="Type" type="xs:string" minOccurs="0"/>
+                              </xs:sequence>
+                           </xs:complexType>
+                        </xs:element>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:schema>
+            <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+               <NewDataSet xmlns="">
+                  <Holidays diffgr:id="Holidays1" msdata:rowOrder="0" diffgr:hasChanges="inserted">
+                     <Name>April Fools Day</Name>
+                     <Key>APRIL_FOOLS</Key>
+                     <Date>2017-04-01T00:00:00-04:00</Date>
+                     <Type>Notable</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays2" msdata:rowOrder="1" diffgr:hasChanges="inserted">
+                     <Name>Palm Sunday</Name>
+                     <Key>PALM_SUN</Key>
+                     <Date>2017-04-09T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays3" msdata:rowOrder="2" diffgr:hasChanges="inserted">
+                     <Name>Maundy Thursday</Name>
+                     <Key>MAUNDY_THURS</Key>
+                     <Date>2017-04-13T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays4" msdata:rowOrder="3" diffgr:hasChanges="inserted">
+                     <Name>Good Friday</Name>
+                     <Key>GOOD_FRIDAY</Key>
+                     <Date>2017-04-14T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays5" msdata:rowOrder="4" diffgr:hasChanges="inserted">
+                     <Name>Easter Sunday</Name>
+                     <Key>EASTER</Key>
+                     <Date>2017-04-16T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays6" msdata:rowOrder="5" diffgr:hasChanges="inserted">
+                     <Name>Easter Monday</Name>
+                     <Key>EASTER_MONDAY</Key>
+                     <Date>2017-04-17T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays7" msdata:rowOrder="6" diffgr:hasChanges="inserted">
+                     <Name>Queen Elizabeth's Birthday</Name>
+                     <Key>QUEEN_ELIZ_BDAY</Key>
+                     <Date>2017-04-21T00:00:00-04:00</Date>
+                     <Type>Notable</Type>
+                  </Holidays>
+                  <Holidays diffgr:id="Holidays8" msdata:rowOrder="7" diffgr:hasChanges="inserted">
+                     <Name>St. George's Day</Name>
+                     <Key>SAINT_GEORGES</Key>
+                     <Date>2017-04-23T00:00:00-04:00</Date>
+                     <Type>Religious</Type>
+                  </Holidays>
+               </NewDataSet>
+            </diffgr:diffgram>
+         </GetHolidaysForMonthResult>
+      </GetHolidaysForMonthResponse>
+   </soap:Body>
+</soap:Envelope>]]></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://www.27seconds.com/Holidays/GetHolidaysForMonth" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest id="ed2db4d0-21dd-475c-bc11-eb0a833db34c" name="LoadTest GetHolidaysForMonth"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting><con:setting id="hasBeenConvertedToLoadUITest">true</con:setting></con:settings><con:threadCount>5</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval><con:reportParameters/></con:loadTest><con:properties/><con:reportParameters/></con:testCase>
